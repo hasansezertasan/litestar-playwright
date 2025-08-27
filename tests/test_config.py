@@ -72,7 +72,7 @@ async def test_playwright_config_provider_custom_key() -> None:
 
 async def test_playwright_lifespan_success() -> None:
     """Test successful lifespan management."""
-    config = PlaywrightConfig(headless=True, browser_type="chromium")
+    config = PlaywrightConfig(browser_type="chromium", headless=True)
 
     # Mock app
     mock_app = mock.Mock()
@@ -105,7 +105,7 @@ async def test_playwright_lifespan_success() -> None:
 
 async def test_playwright_lifespan_firefox() -> None:
     """Test lifespan management with Firefox browser."""
-    config = PlaywrightConfig(headless=False, browser_type="firefox")
+    config = PlaywrightConfig(browser_type="firefox", headless=False)
 
     # Mock app
     mock_app = mock.Mock()
@@ -134,7 +134,7 @@ async def test_playwright_lifespan_firefox() -> None:
 
 async def test_playwright_lifespan_webkit() -> None:
     """Test lifespan management with WebKit browser."""
-    config = PlaywrightConfig(headless=True, browser_type="webkit")
+    config = PlaywrightConfig(browser_type="webkit", headless=True)
 
     # Mock app
     mock_app = mock.Mock()
@@ -200,17 +200,17 @@ async def test_multiple_plugins_configuration() -> None:
         firefox_config: The Firefox configuration.
     """
     chrome_config = PlaywrightConfig(
-        headless=True,
         browser_type="chromium",
-        playwright_browser_instance_state_key="chrome_browser",
+        headless=True,
         playwright_instance_state_key="chrome_playwright",
+        playwright_browser_instance_state_key="chrome_browser",
     )
 
     firefox_config = PlaywrightConfig(
-        headless=False,
         browser_type="firefox",
-        playwright_browser_instance_state_key="firefox_browser",
+        headless=False,
         playwright_instance_state_key="firefox_playwright",
+        playwright_browser_instance_state_key="firefox_browser",
     )
 
     # Verify configurations are different
@@ -233,11 +233,15 @@ async def test_multiple_plugins_custom_launch_kwargs() -> None:
     chrome_config = PlaywrightConfig(
         browser_type="chromium",
         launch_kwargs={"args": ["--no-sandbox", "--disable-dev-shm-usage"]},
+        playwright_instance_state_key="chrome_playwright",
+        playwright_browser_instance_state_key="chrome_browser",
     )
 
     firefox_config = PlaywrightConfig(
         browser_type="firefox",
         launch_kwargs={"firefox_user_prefs": {"dom.webnotifications.enabled": False}},
+        playwright_instance_state_key="firefox_playwright",
+        playwright_browser_instance_state_key="firefox_browser",
     )
 
     # Verify different browser options

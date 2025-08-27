@@ -154,34 +154,34 @@ async def all_browsers_info(
 
 # Create different Playwright configurations for various use cases
 chrome_config = PlaywrightConfig(
-    headless=True,
     browser_type="chromium",
-    playwright_browser_instance_state_key="chrome_browser",
+    headless=True,
     playwright_instance_state_key="chrome_playwright",
+    playwright_browser_instance_state_key="chrome_browser",
     launch_kwargs={"args": ["--no-sandbox", "--disable-dev-shm-usage"]},
 )
 
 firefox_config = PlaywrightConfig(
-    headless=True,
     browser_type="firefox",
-    playwright_browser_instance_state_key="firefox_browser",
+    headless=True,
     playwright_instance_state_key="firefox_playwright",
+    playwright_browser_instance_state_key="firefox_browser",
     launch_kwargs={"firefox_user_prefs": {"dom.webnotifications.enabled": False}},
 )
 
 webkit_config = PlaywrightConfig(
-    headless=True,
     browser_type="webkit",
-    playwright_browser_instance_state_key="webkit_browser",
+    headless=True,
     playwright_instance_state_key="webkit_playwright",
+    playwright_browser_instance_state_key="webkit_browser",
     launch_kwargs={"args": ["--disable-web-security"]},
 )
 
 headless_config = PlaywrightConfig(
-    headless=True,
     browser_type="chromium",
-    playwright_browser_instance_state_key="headless_browser",
+    headless=True,
     playwright_instance_state_key="headless_playwright",
+    playwright_browser_instance_state_key="headless_browser",
     launch_kwargs={
         "args": [
             "--no-sandbox",

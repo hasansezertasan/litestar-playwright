@@ -48,8 +48,8 @@ from litestar_playwright.plugin import PlaywrightPlugin
 # Create the plugin with configuration
 playwright_plugin = PlaywrightPlugin(
     config=PlaywrightConfig(
+        browser_type="chromium",  # or "firefox", "webkit"
         headless=False,  # Show browser windows
-        browser_type="chromium"  # or "firefox", "webkit"
     )
 )
 
@@ -143,15 +143,15 @@ from litestar_playwright.plugin import PlaywrightPlugin
 
 # Create different configurations for various browsers
 chrome_config = PlaywrightConfig(
-    headless=False,
     browser_type="chromium",
-    playwright_browser_instance_state_key="chrome_browser",
+    headless=False,
     launch_kwargs={"args": ["--no-sandbox"]},
+    playwright_browser_instance_state_key="chrome_browser",
 )
 
 firefox_config = PlaywrightConfig(
-    headless=False,
     browser_type="firefox",
+    headless=False,
     playwright_browser_instance_state_key="firefox_browser",
 )
 

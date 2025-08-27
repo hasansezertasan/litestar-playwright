@@ -83,13 +83,13 @@ async def test_multiple_plugins_dependencies() -> None:
         firefox_config: The Firefox configuration.
     """
     chrome_config = PlaywrightConfig(
-        playwright_browser_instance_state_key="chrome_browser",
         playwright_instance_state_key="chrome_playwright",
+        playwright_browser_instance_state_key="chrome_browser",
     )
 
     firefox_config = PlaywrightConfig(
-        playwright_browser_instance_state_key="firefox_browser",
         playwright_instance_state_key="firefox_playwright",
+        playwright_browser_instance_state_key="firefox_browser",
     )
 
     chrome_plugin = PlaywrightPlugin(chrome_config)
@@ -204,9 +204,24 @@ async def test_multiple_plugins_different_browser_types() -> None:
         configs: The configurations.
     """
     configs = [
-        PlaywrightConfig(browser_type="chromium", headless=True),
-        PlaywrightConfig(browser_type="firefox", headless=False),
-        PlaywrightConfig(browser_type="webkit", headless=True),
+        PlaywrightConfig(
+            browser_type="chromium",
+            headless=True,
+            playwright_instance_state_key="chromium_playwright",
+            playwright_browser_instance_state_key="chromium_browser",
+        ),
+        PlaywrightConfig(
+            browser_type="firefox",
+            headless=False,
+            playwright_instance_state_key="firefox_playwright",
+            playwright_browser_instance_state_key="firefox_browser",
+        ),
+        PlaywrightConfig(
+            browser_type="webkit",
+            headless=True,
+            playwright_instance_state_key="webkit_playwright",
+            playwright_browser_instance_state_key="webkit_browser",
+        ),
     ]
 
     for config in configs:

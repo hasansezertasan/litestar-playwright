@@ -21,11 +21,11 @@ if TYPE_CHECKING:
 class PlaywrightConfig:
     """Configuration for Playwright integration."""
 
-    headless: bool = False
-    """Whether to run browsers in headless mode."""
-
     browser_type: Literal["chromium", "firefox", "webkit"] = "chromium"
     """Type of browser to use (chromium, firefox, webkit)."""
+
+    headless: bool = False
+    """Whether to run browsers in headless mode."""
 
     launch_kwargs: dict[str, Any] = field(default_factory=dict)
     """Options to pass to the "playwright.async_api.BrowserType.launch()" method.
