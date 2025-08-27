@@ -66,7 +66,7 @@ class PlaywrightConfig:
                 f"State key collision detected: {collisions}. "
                 "Existing state will be overwritten."
             )
-            warnings.warn(msg, stacklevel=2)
+            warnings.warn(message=msg, stacklevel=2)
 
         app.state.update({
             self.playwright_instance_state_key: playwright,

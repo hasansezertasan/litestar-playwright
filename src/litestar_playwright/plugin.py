@@ -56,27 +56,15 @@ class PlaywrightPlugin(InitPluginProtocol):
                 f"Dependency key collision detected: {collisions}. "
                 "Existing dependencies will be overwritten."
             )
-            warnings.warn(msg, stacklevel=2)
+            warnings.warn(message=msg, stacklevel=2)
         app_config.dependencies.update(
             {
                 self.config.playwright_browser_instance_state_key: Provide(
-                    self.config.provide_playwright_browser_instance,
+                    dependency=self.config.provide_playwright_browser_instance,
                     sync_to_thread=False,
                 ),
                 self.config.playwright_instance_state_key: Provide(
-                    self.config.provide_playwright_instance,
-                    sync_to_thread=False,
-                ),
-            },
-        )
-        app_config.dependencies.update(
-            {
-                self.config.playwright_browser_instance_state_key: Provide(
-                    self.config.provide_playwright_browser_instance,
-                    sync_to_thread=False,
-                ),
-                self.config.playwright_instance_state_key: Provide(
-                    self.config.provide_playwright_instance,
+                    dependency=self.config.provide_playwright_instance,
                     sync_to_thread=False,
                 ),
             },
