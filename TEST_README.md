@@ -124,7 +124,7 @@ uv run pytest tests/ -k "lifespan" -v
 ### Test Count: 12 tests
 
 - 3 configuration tests
-- 2 plugin tests  
+- 2 plugin tests
 - 2 provider tests
 - 5 lifespan tests
 
@@ -214,4 +214,4 @@ uv run pytest tests/ -vvv
 
 # Run with coverage and show missing lines
 uv run pytest tests/ --cov=src/litestar_playwright --cov-report=term-missing -v
-``` 
+```
