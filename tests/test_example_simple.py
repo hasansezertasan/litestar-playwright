@@ -116,4 +116,4 @@ async def test_application_configuration(
 
     plugin = playwright_plugins[0]
     assert isinstance(plugin, PlaywrightPlugin)
-    assert plugin.config.headless is False
+    assert plugin.config.headless is True
