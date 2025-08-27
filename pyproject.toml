@@ -288,13 +288,11 @@ requires = ["tox>=4"]
 [tool.tox.env_run_base]
 commands = [
   [
-    "uv",
     "run",
     "playwright",
     "install-deps",
   ],
   [
-    "uv",
     "run",
     "playwright",
     "install",
