@@ -120,10 +120,12 @@ async def test_multiple_plugins_lifespan() -> None:
         firefox_config: The Firefox configuration.
     """
     chrome_config = PlaywrightConfig(
+        playwright_instance_state_key="chrome_playwright",
         playwright_browser_instance_state_key="chrome_browser",
     )
 
     firefox_config = PlaywrightConfig(
+        playwright_instance_state_key="firefox_playwright",
         playwright_browser_instance_state_key="firefox_browser",
     )
 
@@ -152,13 +154,13 @@ async def test_multiple_plugins_providers() -> None:
         firefox_config: The Firefox configuration.
     """
     chrome_config = PlaywrightConfig(
-        playwright_browser_instance_state_key="chrome_browser",
         playwright_instance_state_key="chrome_playwright",
+        playwright_browser_instance_state_key="chrome_browser",
     )
 
     firefox_config = PlaywrightConfig(
-        playwright_browser_instance_state_key="firefox_browser",
         playwright_instance_state_key="firefox_playwright",
+        playwright_browser_instance_state_key="firefox_browser",
     )
 
     # Mock state with different browsers

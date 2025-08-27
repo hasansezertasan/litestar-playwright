@@ -152,7 +152,14 @@ exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 
 [tool.vulture]
 ignore_decorators = ["@app.command"]
-ignore_names = ["return_value", "pytestmark", "anyio_backend", "side_effect"]
+ignore_names = [
+  "return_value",
+  "pytestmark",
+  "anyio_backend",
+  "side_effect",
+  "on_app_init",
+  "fx_async_client",
+]
 min_confidence = 60
 paths = ["src", "tests", "examples"]
 
