@@ -174,7 +174,6 @@ webkit_config = PlaywrightConfig(
     headless=True,
     playwright_instance_state_key="webkit_playwright",
     playwright_browser_instance_state_key="webkit_browser",
-    launch_kwargs={"args": ["--disable-web-security"]},
 )
 
 headless_config = PlaywrightConfig(
@@ -187,7 +186,6 @@ headless_config = PlaywrightConfig(
             "--no-sandbox",
             "--disable-dev-shm-usage",
             "--disable-gpu",
-            "--disable-web-security",
         ]
     },
 )
