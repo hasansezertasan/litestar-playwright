@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import warnings
 from typing import TYPE_CHECKING
 
 from litestar.di import Provide
@@ -45,6 +46,29 @@ class PlaywrightPlugin(InitPluginProtocol):
         Returns:
             Updated application configuration.
         """
+        dependency_keys = [
+            self.config.playwright_browser_instance_state_key,
+            self.config.playwright_instance_state_key,
+        ]
+        collisions = [key for key in dependency_keys if key in app_config.dependencies]
+        if collisions:
+            msg = (
+                f"Dependency key collision detected: {collisions}. "
+                "Existing dependencies will be overwritten."
+            )
+            warnings.warn(msg, stacklevel=2)
+        app_config.dependencies.update(
+            {
+                self.config.playwright_browser_instance_state_key: Provide(
+                    self.config.provide_playwright_browser_instance,
+                    sync_to_thread=False,
+                ),
+                self.config.playwright_instance_state_key: Provide(
+                    self.config.provide_playwright_instance,
+                    sync_to_thread=False,
+                ),
+            },
+        )
         app_config.dependencies.update(
             {
                 self.config.playwright_browser_instance_state_key: Provide(

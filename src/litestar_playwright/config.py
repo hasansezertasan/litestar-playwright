@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import warnings
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any, Literal, cast
@@ -55,6 +56,18 @@ class PlaywrightConfig:
             **launch_kwargs  # pyrefly: ignore[bad-argument-type]
         )
 
+        state_keys = [
+            self.playwright_browser_instance_state_key,
+            self.playwright_instance_state_key,
+        ]
+        collisions = [key for key in state_keys if key in app.state]
+        if collisions:
+            msg = (
+                f"State key collision detected: {collisions}. "
+                "Existing state will be overwritten."
+            )
+            warnings.warn(msg, stacklevel=2)
+
         app.state.update({
             self.playwright_instance_state_key: playwright,
             self.playwright_browser_instance_state_key: browser,
@@ -72,10 +85,19 @@ class PlaywrightConfig:
         Args:
             state: The application state.
 
+        Raises:
+            RuntimeError: If the Playwright browser instance is not found in state.
+
         Returns:
             The Playwright browser instance.
         """
-        return cast("Browser", state.get(self.playwright_browser_instance_state_key))
+        browser_instance = state.get(self.playwright_browser_instance_state_key)
+        if browser_instance is None:
+            msg = (
+                f"Playwright browser instance not found in state under key '{self.playwright_browser_instance_state_key}'."  # noqa: E501
+            )
+            raise RuntimeError(msg)
+        return cast("Browser", browser_instance)
 
     def provide_playwright_instance(self, state: State) -> Playwright:
         """Provide the Playwright instance from app state.
@@ -83,7 +105,16 @@ class PlaywrightConfig:
         Args:
             state: The application state.
 
+        Raises:
+            RuntimeError: If the Playwright instance is not found in state.
+
         Returns:
             The Playwright instance.
         """
-        return cast("Playwright", state.get(self.playwright_instance_state_key))
+        playwright_instance = state.get(self.playwright_instance_state_key)
+        if playwright_instance is None:
+            msg = (
+                f"Playwright instance not found in state under key '{self.playwright_instance_state_key}'."  # noqa: E501
+            )
+            raise RuntimeError(msg)
+        return cast("Playwright", playwright_instance)

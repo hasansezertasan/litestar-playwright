@@ -7,11 +7,11 @@ from typing import TYPE_CHECKING
 
 import httpx
 import pytest
-from litestar import Litestar
-from litestar.testing import AsyncTestClient
+from examples.simple.main import app  # pyrefly: ignore[import-error]
+from litestar import Litestar  # pylint: disable=wrong-import-order
+from litestar.testing import AsyncTestClient  # pylint: disable=wrong-import-order
 
 from litestar_playwright.plugin import PlaywrightPlugin
-from tests.apps.simple.main import app
 
 if TYPE_CHECKING:
     from typing import AsyncIterator
