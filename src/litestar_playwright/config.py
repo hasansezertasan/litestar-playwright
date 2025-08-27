@@ -93,9 +93,7 @@ class PlaywrightConfig:
         """
         browser_instance = state.get(self.playwright_browser_instance_state_key)
         if browser_instance is None:
-            msg = (
-                f"Playwright browser instance not found in state under key '{self.playwright_browser_instance_state_key}'."  # noqa: E501
-            )
+            msg = f"Playwright browser instance not found in state under key '{self.playwright_browser_instance_state_key}'."  # noqa: E501
             raise RuntimeError(msg)
         return cast("Browser", browser_instance)
 
@@ -113,8 +111,6 @@ class PlaywrightConfig:
         """
         playwright_instance = state.get(self.playwright_instance_state_key)
         if playwright_instance is None:
-            msg = (
-                f"Playwright instance not found in state under key '{self.playwright_instance_state_key}'."  # noqa: E501
-            )
+            msg = f"Playwright instance not found in state under key '{self.playwright_instance_state_key}'."  # noqa: E501
             raise RuntimeError(msg)
         return cast("Playwright", playwright_instance)
