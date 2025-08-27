@@ -1,4 +1,5 @@
 """Configuration for Playwright integration."""
+# pylint: disable=line-too-long
 
 from __future__ import annotations
 
