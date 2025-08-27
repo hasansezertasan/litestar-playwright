@@ -27,7 +27,6 @@ default_language_version:
 default_stages: [pre-commit, pre-push]
 repos:
   # https://github.com/pre-commit/pre-commit-hooks#pre-commit-hooks
-  # https://github.com/pre-commit/pre-commit-hooks#pre-commit-hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -50,12 +49,12 @@ repos:
       - id: debug-statements
         name: Debug Statements
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.8.8
+    rev: 0.8.13
     hooks:
       - id: uv-lock
         name: Update the uv lockfile
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.8
+    rev: v0.12.10
     hooks:
       - id: ruff
         name: Ruff Linter

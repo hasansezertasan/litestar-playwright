@@ -1,4 +1,4 @@
-# Code of Conduct - theproject
+# Code of Conduct - litestar-playwright
 
 ## Our Pledge
 

@@ -47,11 +47,16 @@ jobs:
           python-version-file: '.python-version'
       - name: Setup uv
         id: setup-uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6.5.0
         with:
           enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
       - name: Restore cache
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"
+      - name: Install Playwright Dependencies
+        run: uv run playwright install-deps
       - name: Run the tests
         run: uv run --locked tox run

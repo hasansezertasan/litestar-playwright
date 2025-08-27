@@ -14,7 +14,7 @@ jobs:
     # Specifying a GitHub environment is optional, but strongly encouraged
     environment:
       name: publish
-      url: https://pypi.org/project/theproject/${{ github.ref_name }}
+      url: https://pypi.org/project/litestar-playwright/${{ github.ref_name }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -23,12 +23,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version-file: '.python-version'
+          python-version-file: .python-version
       - name: Setup uv
         id: setup-uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v6.5.0
         with:
           enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
       - name: Restore cache
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"

@@ -5,24 +5,52 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger",
+            "name": "Run Simple Example",
             "type": "debugpy",
             "request": "launch",
             "justMyCode": true,
             "module": "uv",
             "args": [
                 "run",
-                "theproject",
-                "${input:args}"
-            ]
+                "main.py"
+            ],
+            "cwd": "${workspaceFolder}/examples/simple"
+        },
+        {
+            "name": "Run Multiple Plugins Example",
+            "type": "debugpy",
+            "request": "launch",
+            "justMyCode": true,
+            "module": "uv",
+            "args": [
+                "run",
+                "main.py"
+            ],
+            "cwd": "${workspaceFolder}/examples/multiple-plugins"
+        },
+        {
+            "name": "Debug Package",
+            "type": "debugpy",
+            "request": "launch",
+            "justMyCode": true,
+            "module": "uv",
+            "args": [
+                "run",
+                "src/litestar_playwright/__init__.py"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "justMyCode": true,
+            "module": "uv",
+            "args": [
+                "run",
+                "pytest"
+            ],
+            "cwd": "${workspaceFolder}/tests"
         }
-    ],
-	"inputs": [
-		{
-			"id": "args",
-			"type": "promptString",
-			"default": "version",
-			"description": "Arguments"
-		}
-	]
+    ]
 }
