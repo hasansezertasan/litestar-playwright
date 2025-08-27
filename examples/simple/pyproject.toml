@@ -1,0 +1,11 @@
+[project]
+name = "litestar-playwright-simple-example"
+description = "Simple Example. Read the README.md for more information."
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["litestar", "uvicorn", "litestar-playwright"]
+
+
+[tool.uv.sources]
+litestar-playwright = { path = "../../", editable = true }

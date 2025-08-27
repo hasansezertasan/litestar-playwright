@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug in `theproject`
+about: Report a bug in `litestar-playwright`
 title: 'Bug: '
 labels: bug
 assignees: 'hasansezertasan'
@@ -10,8 +10,8 @@ assignees: 'hasansezertasan'
 ## Bug Description
 
 <!--
-This issue tracker is a tool to address bugs in theproject itself.
-Please use GitHub Discussions about your own code or scenarios.
+This issue tracker is a tool to address bugs in litestar-playwright itself.
+Please use GitHub Discussions for questions about your own code.
 
 Replace this comment with a clear outline of what the bug is.
 -->
@@ -21,27 +21,19 @@ Replace this comment with a clear outline of what the bug is.
 <!--
 Describe how to replicate the bug.
 
-Include a minimal reproducible example that demonstrates the bug. Here is an example of a minimal reproducible example:
+Please provide a minimal reproducible example that developers can run to investigate the problem.
+You can find help for creating such an example [here](https://stackoverflow.com/help/minimal-reproducible-example).
 
-```shell
-theproject version
+Here is an example of a minimal reproducible example:
+
+```python
+...
 ```
 
 Include the full traceback if there was an exception. For example:
 
 ```shell
-╭─────────────────────────── Traceback (most recent call last) ─────────────────────────╮
-│ /Users/hasansezertasan/Developer/projects/theproject/src/theproject/main.py:28 in show_version    │
-│                                                                                       │
-│   25 │   Example output:                                                              │
-│   26 │   │   0.1.0                                                                    │
-│   27 │   """                                                                          │
-│ > 28 │   0/0                                                                          │
-│   29 │   logger.info("Command `version` called.")                                     │
-│   30 │   typer.echo(version("theproject"))                                            │
-│   31 │   logger.info("Version displayed successfully.")                               │
-╰───────────────────────────────────────────────────────────────────────────────────────╯
-ZeroDivisionError: division by zero
+...
 ```
 -->
 
@@ -54,11 +46,26 @@ Describe the expected behavior that should have happened but didn't.
 ## Environment
 
 <!--
-Simply run `theproject info` and paste the output here.
+You can skip this section if you have provided a minimal reproducible example that includes the
+environment information as part of the code snippet (inline metadata).
 
-```shell
-Application Version: 0.0
-Python Version: 3.8.20 (CPython)
-Platform: Darwin
-```
+Otherwise, please complete the following information
+
+Read more about inline metadata:
+  - [PEP 723 – Inline script metadata | peps.python.org](https://peps.python.org/pep-0723/)
+  - [Inline script metadata - Python Packaging User Guide](https://packaging.python.org/en/latest/specifications/inline-script-metadata/)
+-->
+
+- litestar-playwright version: [e.g. 0.1.0]
+- litestar version: [e.g. 0.1.0]
+- playwright version: [e.g. 0.1.0]
+- python version: [e.g. 3.10]
+- operating system: [e.g. Windows 10, macOS 12, Ubuntu 20.04]
+- browser: [e.g. Chrome, Firefox, Safari]
+- browser version: [e.g. 100, 99, 101]
+
+## Additional Context
+
+<!--
+Add any other context about the problem here.
 -->

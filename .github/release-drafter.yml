@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/release-drafter/release-drafter/refs/heads/master/schema.json
 # Configuration for Release Drafter: https://github.com/release-drafter/release-drafter
-name-template: '$RESOLVED_VERSION 🌈'
-tag-template: '$RESOLVED_VERSION'
+name-template: $RESOLVED_VERSION 🌈
+tag-template: $RESOLVED_VERSION
 template: |
-  # :mega: theproject $RESOLVED_VERSION released!
+  # :mega: litestar-playwright $RESOLVED_VERSION released!
 
-  We are pleased to announce the release of theproject $RESOLVED_VERSION.
+  We are pleased to announce the release of litestar-playwright $RESOLVED_VERSION.
 
   $CHANGES
 
@@ -18,66 +18,66 @@ template: |
 change-template: '- $TITLE by @$AUTHOR in (#$NUMBER)'
 no-changes-template: '- No changes'
 exclude-contributors:
-  - 'dependabot'
-  - 'pre-commit-ci'
-  - 'renovate'
+  - dependabot
+  - pre-commit-ci
+  - renovate
 exclude-labels:
-  - 'skip-changelog'
-  - 'invalid'
+  - skip-changelog
+  - invalid
 replacers:
   # https://github.com/release-drafter/release-drafter/issues/569#issuecomment-645942909
-  - search: '/(?:and )?@(pre-commit-ci|dependabot|renovate)(?:\[bot\])?,?/g'
+  - search: /(?:and )?@(pre-commit-ci|dependabot|renovate)(?:\[bot\])?,?/g
     replace: ''
 autolabeler:
-  - label: 'metadata'
+  - label: metadata
     files:
-      - 'README.md'
-      - 'pyproject.toml'
-  - label: 'documentation'
+      - README.md
+      - pyproject.toml
+  - label: documentation
     files:
       - '*.md'
-      - 'docs/**'
+      - docs/**
     branch:
       - '/docs{0,1}\/.+/'
-  - label: 'bug'
+  - label: bug
     branch:
-      - '/fix\/.+/'
+      - /fix\/.+/
     title:
-      - '/^fix/i'
-  - label: 'enhancement'
+      - /^fix/i
+  - label: enhancement
     branch:
-      - '/feature\/.+/'
+      - /feature\/.+/
     title:
-      - '/^feat/i'
-  - label: 'dependencies'
+      - /^feat/i
+  - label: dependencies
     title:
-      - '/^chore\(deps\)/i'
-      - '/^fix\(deps\)/i'
-      - '/^chore:\s*bump/i'
-  - label: 'github_actions'
+      - /^chore\(deps\)/i
+      - /^fix\(deps\)/i
+      - /^chore:\s*bump/i
+  - label: github_actions
     files:
-      - '.github/workflows/*.yml'
-  - label: 'chore'
+      - .github/workflows/*.yml
+  - label: chore
     title:
-      - '/^chore/i'
+      - /^chore/i
 version-resolver:
   major:
     labels:
-      - 'major'
-      - 'breaking'
+      - major
+      - breaking
   minor:
     labels:
-      - 'minor'
-      - 'feature'
-      - 'enhancement'
+      - minor
+      - feature
+      - enhancement
   patch:
     labels:
-      - 'patch'
-      - 'metadata'
-      - 'maintenance'
-      - 'bug'
-      - 'dependencies'
-      - 'security'
+      - patch
+      - metadata
+      - maintenance
+      - bug
+      - dependencies
+      - security
   default: patch
 categories:
   - title: ':boom: Breaking'

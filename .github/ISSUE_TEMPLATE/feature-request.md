@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest a new feature for `theproject`
+about: Suggest a new feature for `litestar-playwright`
 title: 'Enhancement: '
 labels: enhancement
 assignees: 'hasansezertasan'
