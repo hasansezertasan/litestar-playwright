@@ -66,10 +66,10 @@ The `PlaywrightConfig` class provides several configuration options:
 class PlaywrightConfig:
     headless: bool = True
     """Whether to run browsers in headless mode."""
-    
+
     browser_type: str = "chromium"
     """Type of browser to use (chromium, firefox, webkit)."""
-    
+
     playwright_app_state_key: str = "playwright_browser"
     """Key used to store the browser instance in app state."""
 ```
@@ -88,13 +88,13 @@ from playwright.async_api import Browser
 async def my_route(playwright_browser: Browser) -> str:
     # Create a new context
     context = await playwright_browser.new_context()
-    
+
     # Create a new page
     page = await context.new_page()
-    
+
     # Navigate to a URL
     await page.goto("https://example.com")
-    
+
     return "Page loaded!"
 ```
 
@@ -110,18 +110,18 @@ from playwright.async_api import Browser
 async def scrape_website(playwright_browser: Browser) -> dict:
     # Create a new context
     context = await playwright_browser.new_context()
-    
+
     try:
         # Create a new page
         page = await context.new_page()
-        
+
         # Navigate to a website
         await page.goto("https://example.com")
-        
+
         # Extract information
         title = await page.title()
         content = await page.content()
-        
+
         return {
             "title": title,
             "content_length": len(content)

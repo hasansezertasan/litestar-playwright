@@ -313,7 +313,7 @@ commands = [
   ["ruff", "format"],
   [
     "mypy",
-    # "--install-types", 
+    # "--install-types",
     # "--non-interactive",
     "--explicit-package-bases",
     "--python-version",
@@ -321,7 +321,7 @@ commands = [
   ],
   [
     "mypy",
-    # "--install-types", 
+    # "--install-types",
     # "--non-interactive",
     "--explicit-package-bases",
     "--python-version",
