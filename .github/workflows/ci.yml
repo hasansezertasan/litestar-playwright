@@ -56,9 +56,5 @@ jobs:
       - name: Restore cache
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"
-      - name: Run the Examples
-        run: |
-          ...
-          ...
       - name: Run the tests
         run: uv run --locked tox run
