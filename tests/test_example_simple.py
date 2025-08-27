@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 pytestmark = pytest.mark.anyio
 
 
-@pytest.fixture(name="async_client")
+@pytest.fixture(name="async_client", scope="session")
 async def fx_async_client() -> AsyncIterator[httpx.AsyncClient]:
     """Create a test client for testing.
 
