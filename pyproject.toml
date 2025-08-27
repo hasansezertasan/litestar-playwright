@@ -297,10 +297,6 @@ requires = ["tox>=4"]
 commands = [
   [
     "playwright",
-    "install-deps",
-  ],
-  [
-    "playwright",
     "install",
   ],
   [
