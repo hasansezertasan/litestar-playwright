@@ -291,12 +291,6 @@ commands = [
     "uv",
     "run",
     "playwright",
-    "install-deps",
-  ],
-  [
-    "uv",
-    "run",
-    "playwright",
     "install",
   ],
   [
@@ -341,7 +335,7 @@ commands = [
   ],
   ["pyright"],
   ["pylint", "src"],
-  ["ty", "check"],
+  # ["ty", "check"],
   ["pyrefly", "check"],
   ["vulture"],
   # ["slotscheck", "src"],

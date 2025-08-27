@@ -154,7 +154,7 @@ async def all_browsers_info(
 
 # Create different Playwright configurations for various use cases
 chrome_config = PlaywrightConfig(
-    headless=False,
+    headless=True,
     browser_type="chromium",
     playwright_browser_instance_state_key="chrome_browser",
     playwright_instance_state_key="chrome_playwright",
@@ -162,7 +162,7 @@ chrome_config = PlaywrightConfig(
 )
 
 firefox_config = PlaywrightConfig(
-    headless=False,
+    headless=True,
     browser_type="firefox",
     playwright_browser_instance_state_key="firefox_browser",
     playwright_instance_state_key="firefox_playwright",
@@ -170,7 +170,7 @@ firefox_config = PlaywrightConfig(
 )
 
 webkit_config = PlaywrightConfig(
-    headless=False,
+    headless=True,
     browser_type="webkit",
     playwright_browser_instance_state_key="webkit_browser",
     playwright_instance_state_key="webkit_playwright",

@@ -56,5 +56,7 @@ jobs:
       - name: Restore cache
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"
+      - name: Install Playwright Dependencies
+        run: uv run playwright install-deps
       - name: Run the tests
         run: uv run --locked tox run

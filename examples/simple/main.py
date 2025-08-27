@@ -38,7 +38,7 @@ async def browser_info(browser: Browser) -> Dict[str, str]:
 
 
 app = Litestar(
-    plugins=[PlaywrightPlugin(config=PlaywrightConfig(headless=False))],
+    plugins=[PlaywrightPlugin(config=PlaywrightConfig(headless=True))],
     route_handlers=[index, browser_info],
     debug=True,
 )
