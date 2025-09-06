@@ -67,11 +67,11 @@ uv add litestar-playwright
 
 ### Simple Example
 
-Check out the [Quick Start](./examples/simple/README.md) example to see how to use the plugin.
+Check out the [Quick Start](https://github.com/hasansezertasan/litestar-playwright/blob/main/examples/simple/README.md) example to see how to use the plugin.
 
 ### Multiple Playwright Plugins Example
 
-Check out the [Multiple Playwright Plugins](./examples/multiple_plugins/README.md) example to see how to use multiple plugins in a single application.
+Check out the [Multiple Playwright Plugins](https://github.com/hasansezertasan/litestar-playwright/blob/main/examples/multiple_plugins/README.md) example to see how to use multiple plugins in a single application.
 
 ## Support :envelope:
 
@@ -79,7 +79,7 @@ If you have any questions or need help, feel free to open an issue on the [GitHu
 
 ## Contributing :octocat:
 
-Any contributions are welcome! Please follow the [Contributing Guidelines](./CONTRIBUTING.md) to contribute to this project.
+Any contributions are welcome! Please follow the [Contributing Guidelines](https://github.com/hasansezertasan/litestar-playwright/blob/main/CONTRIBUTING.md) to contribute to this project.
 
 ## Author :crown:
 
@@ -143,7 +143,7 @@ uv run python examples/multiple_plugins.py
 
 ## Changelog :memo:
 
-For a detailed list of changes, please refer to the [CHANGELOG](./CHANGELOG.md).
+For a detailed list of changes, please refer to the [CHANGELOG](https://github.com/hasansezertasan/litestar-playwright/blob/main/CHANGELOG.md).
 
 <!-- Refs -->
 
