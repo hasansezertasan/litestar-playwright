@@ -9,7 +9,7 @@
 [![Latest Commit](https://img.shields.io/github/last-commit/hasansezertasan/litestar-playwright)](https://github.com/hasansezertasan/litestar-playwright)
 
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
-[![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Linted and formatted with Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![GitHub Tag](https://img.shields.io/github/tag/hasansezertasan/litestar-playwright?include_prereleases=&sort=semver&color=black)](https://github.com/hasansezertasan/litestar-playwright/releases/)
 
 [![Downloads](https://pepy.tech/badge/litestar-playwright)](https://pepy.tech/project/litestar-playwright)
@@ -28,15 +28,12 @@ Playwright integration for Litestar.
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
-  - [Quick Start](#quick-start)
-  - [Configuration](#configuration)
   - [Usage](#usage)
-    - [Accessing Browser Instances](#accessing-browser-instances)
-    - [Web Scraping Example](#web-scraping-example)
-    - [Multiple Playwright Plugins Example](#multiple-playwright-plugins-example)
-  - [Support :heart:](#support-heart)
-  - [Author :person_with_crown:](#author-personwithcrown)
-  - [Contributing :heart:](#contributing-heart)
+  - [Simple Example](#simple-example)
+  - [Multiple Playwright Plugins Example](#multiple-playwright-plugins-example)
+  - [Support :envelope:](#support-envelope)
+  - [Author :crown:](#author-crown)
+  - [Contributing :octocat:](#contributing-octocat)
   - [Tasks](#tasks)
     - [`install`](#install)
     - [`style`](#style)
@@ -48,11 +45,17 @@ Playwright integration for Litestar.
 
 <!--toc:end-->
 
+## About
+
+`litestar-playwright` is a plugin for [Litestar](https://litestar.dev/) that provides Playwright integration.
+
+:sparkles: This project was born out of necessity when I was working on a project that required me to take screenshots :camera_flash:of given HTML content. I was using Playwright for this purpose, but I was not satisfied with my workflow. While improving the workflow, I started a [discussion](https://github.com/orgs/litestar-org/discussions/4249) :speech_balloon: at the Litestar Organization. Even though the discussion had zero activity :zzz:, it was a great opportunity to discover some of the internal mechanisms of Litestar. After over-engineering the workflow :nerd_face:, I decided to create a plugin for Litestar that would provide seamless Playwright integration. I learned a lot about how to use Playwright with Litestar on the way :rocket:.
+
 ## Features
 
-- 🎭 **Browser Management**: Manage Playwright browser instances
-- 🔧 **Dependency Injection**: Automatic injection of browser instances into route handlers
-- ⚡ **Async Support**: Full async/await support for all operations
+- :performing_arts: **Browser Management**: Manage Playwright browser instances
+- :wrench: **Dependency Injection**: Automatic injection of browser instances into route handlers
+- :zap: **Async Support**: Full async/await support for all operations
 
 ## Installation
 
@@ -60,160 +63,27 @@ Playwright integration for Litestar.
 uv add litestar-playwright
 ```
 
-## Quick Start
-
-```python
-from litestar import Litestar
-from litestar_playwright.config import PlaywrightConfig
-from litestar_playwright.plugin import PlaywrightPlugin
-
-# Create the plugin with configuration
-playwright_plugin = PlaywrightPlugin(
-    config=PlaywrightConfig(
-        browser_type="chromium",  # or "firefox", "webkit"
-        headless=False,  # Show browser windows
-    )
-)
-
-# Add to your Litestar app
-app = Litestar(plugins=[playwright_plugin])
-```
-
-## Configuration
-
-The `PlaywrightConfig` class provides several configuration options:
-
-```python
-@dataclass
-class PlaywrightConfig:
-    headless: bool = True
-    """Whether to run browsers in headless mode."""
-
-    browser_type: str = "chromium"
-    """Type of browser to use (chromium, firefox, webkit)."""
-
-    playwright_app_state_key: str = "playwright_browser"
-    """Key used to store the browser instance in app state."""
-```
-
 ## Usage
 
-### Accessing Browser Instances
+### Simple Example
 
-The plugin automatically injects browser instances into your route handlers:
-
-```python
-from litestar import get
-from playwright.async_api import Browser
-
-@get("/my-route")
-async def my_route(playwright_browser: Browser) -> str:
-    # Create a new context
-    context = await playwright_browser.new_context()
-
-    # Create a new page
-    page = await context.new_page()
-
-    # Navigate to a URL
-    await page.goto("https://example.com")
-
-    return "Page loaded!"
-```
-
-### Web Scraping Example
-
-Here's a complete example of web scraping with the plugin:
-
-```python
-from litestar import get
-from playwright.async_api import Browser
-
-@get("/scrape")
-async def scrape_website(playwright_browser: Browser) -> dict:
-    # Create a new context
-    context = await playwright_browser.new_context()
-
-    try:
-        # Create a new page
-        page = await context.new_page()
-
-        # Navigate to a website
-        await page.goto("https://example.com")
-
-        # Extract information
-        title = await page.title()
-        content = await page.content()
-
-        return {
-            "title": title,
-            "content_length": len(content)
-        }
-    finally:
-        # Always clean up
-        await context.close()
-```
+Check out the [Quick Start](https://github.com/hasansezertasan/litestar-playwright/blob/main/examples/simple/README.md) example to see how to use the plugin.
 
 ### Multiple Playwright Plugins Example
 
-You can use multiple Playwright plugins in a single application for different use cases:
+Check out the [Multiple Playwright Plugins](https://github.com/hasansezertasan/litestar-playwright/blob/main/examples/multiple_plugins/README.md) example to see how to use multiple plugins in a single application.
 
-```python
-from litestar import Litestar, get
-from playwright.async_api import Browser
-from litestar_playwright.config import PlaywrightConfig
-from litestar_playwright.plugin import PlaywrightPlugin
-
-# Create different configurations for various browsers
-chrome_config = PlaywrightConfig(
-    browser_type="chromium",
-    headless=False,
-    launch_kwargs={"args": ["--no-sandbox"]},
-    playwright_browser_instance_state_key="chrome_browser",
-)
-
-firefox_config = PlaywrightConfig(
-    browser_type="firefox",
-    headless=False,
-    playwright_browser_instance_state_key="firefox_browser",
-)
-
-# Route handlers can inject specific browser instances
-@get("/chrome-info")
-async def chrome_info(chrome_browser: Browser) -> dict:
-    return {"browser": chrome_browser.browser_type.name}
-
-@get("/firefox-info")
-async def firefox_info(firefox_browser: Browser) -> dict:
-    return {"browser": firefox_browser.browser_type.name}
-
-# Use multiple plugins in your app
-app = Litestar(
-    plugins=[
-        PlaywrightPlugin(config=chrome_config),
-        PlaywrightPlugin(config=firefox_config),
-    ],
-    route_handlers=[chrome_info, firefox_info],
-)
-```
-
-This approach is useful for:
-
-- **Cross-browser testing**: Test your application across different browsers
-- **Specialized workflows**: Use different browsers for different tasks
-- **CI/CD scenarios**: Run headless browsers for automated testing
-- **Performance testing**: Compare behavior across browser engines
-
-## Support :heart:
+## Support :envelope:
 
 If you have any questions or need help, feel free to open an issue on the [GitHub repository][litestar-playwright].
 
-## Author :person_with_crown:
+## Contributing :octocat:
+
+Any contributions are welcome! Please follow the [Contributing Guidelines](https://github.com/hasansezertasan/litestar-playwright/blob/main/CONTRIBUTING.md) to contribute to this project.
+
+## Author :crown:
 
 This project is maintained by [Hasan Sezer Taşan][author], It's me :wave:
-
-## Contributing :heart:
-
-Any contributions are welcome! Please follow the [Contributing Guidelines](./CONTRIBUTING.md) to contribute to this project.
 
 ## Tasks
 
@@ -273,7 +143,7 @@ uv run python examples/multiple_plugins.py
 
 ## Changelog :memo:
 
-For a detailed list of changes, please refer to the [CHANGELOG](./CHANGELOG.md).
+For a detailed list of changes, please refer to the [CHANGELOG](https://github.com/hasansezertasan/litestar-playwright/blob/main/CHANGELOG.md).
 
 <!-- Refs -->
 
