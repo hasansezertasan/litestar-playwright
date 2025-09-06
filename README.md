@@ -22,9 +22,31 @@ Playwright integration for Litestar.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [License](#license)
+<!--toc:start-->
 
+- [litestar-playwright](#litestar-playwright)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+    - [Accessing Browser Instances](#accessing-browser-instances)
+    - [Web Scraping Example](#web-scraping-example)
+    - [Multiple Playwright Plugins Example](#multiple-playwright-plugins-example)
+  - [Support :heart:](#support-heart)
+  - [Author :person_with_crown:](#author-personwithcrown)
+  - [Contributing :heart:](#contributing-heart)
+  - [Tasks](#tasks)
+    - [`install`](#install)
+    - [`style`](#style)
+    - [`ci`](#ci)
+    - [`run-simple`](#run-simple)
+    - [`run-multiple-plugins`](#run-multiple-plugins)
+  - [License](#license)
+  - [Changelog :memo:](#changelog-memo)
+
+<!--toc:end-->
 
 ## Features
 
@@ -175,6 +197,7 @@ app = Litestar(
 ```
 
 This approach is useful for:
+
 - **Cross-browser testing**: Test your application across different browsers
 - **Specialized workflows**: Use different browsers for different tasks
 - **CI/CD scenarios**: Run headless browsers for automated testing
@@ -192,8 +215,7 @@ This project is maintained by [Hasan Sezer Taşan][author], It's me :wave:
 
 Any contributions are welcome! Please follow the [Contributing Guidelines](./CONTRIBUTING.md) to contribute to this project.
 
-<!-- xc-heading -->
-## Development :toolbox:
+## Tasks
 
 Clone the repository and cd into the project directory:
 
@@ -229,89 +251,21 @@ Run the CI pipeline:
 uv run --locked tox run
 ```
 
-### Running the Examples
+### `run-simple`
+
+Run the simple example:
 
 ```sh
-# Run the simple example
 uv run python examples/simple.py
+```
 
-# Run the multiple plugins example
+### `run-multiple-plugins`
+
+Run the multiple plugins example:
+
+```sh
 uv run python examples/multiple_plugins.py
 ```
-
-### Testing
-
-#### Run tests
-
-```sh
-# Run all tests
-uv run pytest tests/
-
-# Run with verbose output
-uv run pytest tests/ -v
-
-# Run with coverage
-uv run pytest tests/ --cov=src/litestar_playwright --cov-report=term-missing
-
-# Run specific test categories
-uv run pytest tests/ -k "config" -v      # Configuration tests only
-uv run pytest tests/ -k "plugin" -v      # Plugin tests only
-uv run pytest tests/ -k "lifespan" -v    # Lifespan tests only
-```
-
-#### Test Coverage
-
-Current test coverage: **95%**
-
-- **`config.py`**: 100% coverage ✅
-- **`plugin.py`**: 100% coverage ✅
-- **`conftest.py`**: 52% coverage (test fixtures)
-
-See [tests/README.md](tests/README.md) for detailed test documentation.
-
-## Tasks
-
-### Development Commands
-
-- `uv sync` - Install dependencies
-- `playwright install` - Install Playwright browsers
-- `uv run pytest tests/` - Run all tests
-- `uv run pytest tests/ -v` - Run tests with verbose output
-- `uv run pytest tests/ --cov=src/litestar_playwright --cov-report=term-missing` - Run tests with coverage
-- `uv run python examples/simple.py` - Run simple example server
-- `uv run python examples/multiple_plugins.py` - Run multiple plugins example server
-
-### Testing Commands
-
-- `uv run pytest tests/` - Run all tests
-- `uv run pytest tests/ -v` - Run tests with verbose output
-- `uv run pytest tests/ --cov=src/litestar_playwright --cov-report=term-missing` - Run tests with coverage report
-- `uv run pytest tests/ --cov=src/litestar_playwright --cov-report=html` - Generate HTML coverage report
-- `uv run pytest tests/ -k "config" -v` - Run configuration tests only
-- `uv run pytest tests/ -k "plugin" -v` - Run plugin tests only
-- `uv run pytest tests/ -k "lifespan" -v` - Run lifespan tests only
-- `uv run pytest tests/ -k "provider" -v` - Run provider tests only
-
-### Code Quality Commands
-
-- `uv run ruff check src/ tests/` - Run linting checks
-- `uv run ruff format src/ tests/` - Format code with ruff
-- `uv run mypy src/ tests/` - Run type checking
-- `uv run mypy --install-types --non-interactive src/ tests/` - Run type checking with type installation
-
-### Build Commands
-
-- `uv build` - Build the package
-- `uv publish` - Publish to PyPI
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Run the test suite
-6. Submit a pull request
 
 ## License
 
@@ -322,5 +276,6 @@ See [tests/README.md](tests/README.md) for detailed test documentation.
 For a detailed list of changes, please refer to the [CHANGELOG](./CHANGELOG.md).
 
 <!-- Refs -->
+
 [author]: https://github.com/hasansezertasan
 [litestar_playwright]: https://github.com/hasansezertasan/litestar-playwright

@@ -1,10 +1,11 @@
 ---
 name: Bug report
 about: Report a bug in `litestar-playwright`
-title: 'Bug: '
+title: "Bug: "
 labels: bug
-assignees: 'hasansezertasan'
+assignees: "hasansezertasan"
 ---
+
 # Bug Report
 
 ## Bug Description
