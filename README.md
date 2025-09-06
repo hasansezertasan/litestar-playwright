@@ -3,8 +3,8 @@
 <!-- TODO: Make it work, make it right, make it fast. -->
 
 [![CI](https://github.com/hasansezertasan/litestar-playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/hasansezertasan/litestar-playwright/actions/workflows/ci.yml)
-[![PyPI - Version](https://img.shields.io/pypi/v/litestar_playwright.svg)](https://pypi.org/project/litestar_playwright)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/litestar_playwright.svg)](https://pypi.org/project/litestar_playwright)
+[![PyPI - Version](https://img.shields.io/pypi/v/litestar-playwright.svg)](https://pypi.org/project/litestar-playwright)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/litestar-playwright.svg)](https://pypi.org/project/litestar-playwright)
 [![License - MIT](https://img.shields.io/github/license/hasansezertasan/litestar-playwright.svg)](https://opensource.org/licenses/MIT)
 [![Latest Commit](https://img.shields.io/github/last-commit/hasansezertasan/litestar-playwright)](https://github.com/hasansezertasan/litestar-playwright)
 
@@ -12,9 +12,9 @@
 [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![GitHub Tag](https://img.shields.io/github/tag/hasansezertasan/litestar-playwright?include_prereleases=&sort=semver&color=black)](https://github.com/hasansezertasan/litestar-playwright/releases/)
 
-[![Downloads](https://pepy.tech/badge/litestar_playwright)](https://pepy.tech/project/litestar_playwright)
-[![Downloads/Month](https://pepy.tech/badge/litestar_playwright/month)](https://pepy.tech/project/litestar_playwright)
-[![Downloads/Week](https://pepy.tech/badge/litestar_playwright/week)](https://pepy.tech/project/litestar_playwright)
+[![Downloads](https://pepy.tech/badge/litestar-playwright)](https://pepy.tech/project/litestar-playwright)
+[![Downloads/Month](https://pepy.tech/badge/litestar-playwright/month)](https://pepy.tech/project/litestar-playwright)
+[![Downloads/Week](https://pepy.tech/badge/litestar-playwright/week)](https://pepy.tech/project/litestar-playwright)
 
 Playwright integration for Litestar.
 
@@ -205,7 +205,7 @@ This approach is useful for:
 
 ## Support :heart:
 
-If you have any questions or need help, feel free to open an issue on the [GitHub repository][litestar_playwright].
+If you have any questions or need help, feel free to open an issue on the [GitHub repository][litestar-playwright].
 
 ## Author :person_with_crown:
 
@@ -221,7 +221,7 @@ Clone the repository and cd into the project directory:
 
 ```sh
 git clone https://github.com/hasansezertasan/litestar-playwright
-cd litestar_playwright
+cd litestar-playwright
 ```
 
 The commands below can also be executed using the [xc task runner](https://xcfile.dev/), which combines the usage instructions with the actual commands. Simply run `xc`, it will pop up an interactive menu with all available tasks.
@@ -278,4 +278,4 @@ For a detailed list of changes, please refer to the [CHANGELOG](./CHANGELOG.md).
 <!-- Refs -->
 
 [author]: https://github.com/hasansezertasan
-[litestar_playwright]: https://github.com/hasansezertasan/litestar-playwright
+[litestar-playwright]: https://github.com/hasansezertasan/litestar-playwright
