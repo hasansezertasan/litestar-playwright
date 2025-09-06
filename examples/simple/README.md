@@ -2,7 +2,6 @@
 
 This example demonstrates how to use the [Litestar Playwright Plugin](https://github.com/hasansezertasan/litestar-playwright) with [Litestar](https://github.com/litestar-org/litestar/) application.
 
-
 ## How to run this example
 
 Clone the repository and navigate to this example:

@@ -1,56 +1,44 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Run Simple Example",
-            "type": "debugpy",
-            "request": "launch",
-            "justMyCode": true,
-            "module": "uv",
-            "args": [
-                "run",
-                "main.py"
-            ],
-            "cwd": "${workspaceFolder}/examples/simple"
-        },
-        {
-            "name": "Run Multiple Plugins Example",
-            "type": "debugpy",
-            "request": "launch",
-            "justMyCode": true,
-            "module": "uv",
-            "args": [
-                "run",
-                "main.py"
-            ],
-            "cwd": "${workspaceFolder}/examples/multiple-plugins"
-        },
-        {
-            "name": "Debug Package",
-            "type": "debugpy",
-            "request": "launch",
-            "justMyCode": true,
-            "module": "uv",
-            "args": [
-                "run",
-                "src/litestar_playwright/__init__.py"
-            ],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "name": "Debug Tests",
-            "type": "debugpy",
-            "request": "launch",
-            "justMyCode": true,
-            "module": "uv",
-            "args": [
-                "run",
-                "pytest"
-            ],
-            "cwd": "${workspaceFolder}/tests"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Simple Example",
+      "type": "debugpy",
+      "request": "launch",
+      "justMyCode": true,
+      "module": "uv",
+      "args": ["run", "main.py"],
+      "cwd": "${workspaceFolder}/examples/simple"
+    },
+    {
+      "name": "Run Multiple Plugins Example",
+      "type": "debugpy",
+      "request": "launch",
+      "justMyCode": true,
+      "module": "uv",
+      "args": ["run", "main.py"],
+      "cwd": "${workspaceFolder}/examples/multiple-plugins"
+    },
+    {
+      "name": "Debug Package",
+      "type": "debugpy",
+      "request": "launch",
+      "justMyCode": true,
+      "module": "uv",
+      "args": ["run", "src/litestar_playwright/__init__.py"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "justMyCode": true,
+      "module": "uv",
+      "args": ["run", "pytest"],
+      "cwd": "${workspaceFolder}/tests"
+    }
+  ]
 }

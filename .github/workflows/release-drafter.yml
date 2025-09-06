@@ -13,8 +13,8 @@ permissions:
 jobs:
   update_release_draft:
     permissions:
-      contents: write  # IMPORTANT: Mandatory for Release Drafter (release-drafter)
-      pull-requests: write  # IMPORTANT: Mandatory for Release Drafter (release-drafter)
+      contents: write # IMPORTANT: Mandatory for Release Drafter (release-drafter)
+      pull-requests: write # IMPORTANT: Mandatory for Release Drafter (release-drafter)
     runs-on: ubuntu-latest
     steps:
       - name: Draft a Release

@@ -1,11 +1,12 @@
 ---
 name: Feature request
 about: Suggest a new feature for `litestar-playwright`
-title: 'Enhancement: '
+title: "Enhancement: "
 labels: enhancement
-assignees: 'hasansezertasan'
+assignees: "hasansezertasan"
 ---
-# Feature Request
+
+# Enhancement: <!-- Feature Name -->
 
 ## Feature Description
 
