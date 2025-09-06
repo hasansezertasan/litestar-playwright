@@ -2,15 +2,15 @@
 
 <!-- TODO: Make it work, make it right, make it fast. -->
 
-[![CI](https://github.com/hasansezertasan/litestar_playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/hasansezertasan/litestar_playwright/actions/workflows/ci.yml)
+[![CI](https://github.com/hasansezertasan/litestar-playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/hasansezertasan/litestar-playwright/actions/workflows/ci.yml)
 [![PyPI - Version](https://img.shields.io/pypi/v/litestar_playwright.svg)](https://pypi.org/project/litestar_playwright)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/litestar_playwright.svg)](https://pypi.org/project/litestar_playwright)
-[![License - MIT](https://img.shields.io/github/license/hasansezertasan/litestar_playwright.svg)](https://opensource.org/licenses/MIT)
-[![Latest Commit](https://img.shields.io/github/last-commit/hasansezertasan/litestar_playwright)](https://github.com/hasansezertasan/litestar_playwright)
+[![License - MIT](https://img.shields.io/github/license/hasansezertasan/litestar-playwright.svg)](https://opensource.org/licenses/MIT)
+[![Latest Commit](https://img.shields.io/github/last-commit/hasansezertasan/litestar-playwright)](https://github.com/hasansezertasan/litestar-playwright)
 
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![GitHub Tag](https://img.shields.io/github/tag/hasansezertasan/litestar_playwright?include_prereleases=&sort=semver&color=black)](https://github.com/hasansezertasan/litestar_playwright/releases/)
+[![GitHub Tag](https://img.shields.io/github/tag/hasansezertasan/litestar-playwright?include_prereleases=&sort=semver&color=black)](https://github.com/hasansezertasan/litestar-playwright/releases/)
 
 [![Downloads](https://pepy.tech/badge/litestar_playwright)](https://pepy.tech/project/litestar_playwright)
 [![Downloads/Month](https://pepy.tech/badge/litestar_playwright/month)](https://pepy.tech/project/litestar_playwright)
@@ -220,7 +220,7 @@ Any contributions are welcome! Please follow the [Contributing Guidelines](./CON
 Clone the repository and cd into the project directory:
 
 ```sh
-git clone https://github.com/hasansezertasan/litestar_playwright
+git clone https://github.com/hasansezertasan/litestar-playwright
 cd litestar_playwright
 ```
 
