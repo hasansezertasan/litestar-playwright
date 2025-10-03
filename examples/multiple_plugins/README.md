@@ -23,6 +23,30 @@ Run the example using `uv`:
 uv run main.py
 ```
 
+## Using Docker
+
+Remove these lines from `pyproject.toml`:
+
+```toml
+[tool.uv.sources]
+litestar-playwright = { path = "../../", editable = true }
+```
+
+Update the uv lockfile:
+
+```sh
+uv lock
+```
+
+Build the Docker image:
+
+```sh
+docker build -t litestar-playwright-multiple-plugins-example -f ./Dockerfile .
+docker run -p 8000:8000 litestar-playwright-multiple-plugins-example
+```
+
+## Routes
+
 See the [Swagger UI](http://0.0.0.0:8000/schema/swagger) to see the available routes or navigate to the following routes:
 
 - `http://0.0.0.0:8000/` - Index route

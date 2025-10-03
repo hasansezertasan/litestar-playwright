@@ -23,7 +23,7 @@ exclude: |
     |alembic
   )$
 default_language_version:
-  python: python3.9
+  python: python3.10
 default_stages: [pre-commit, pre-push]
 repos:
   # https://github.com/pre-commit/pre-commit-hooks#pre-commit-hooks
@@ -48,6 +48,11 @@ repos:
         name: Trailing whitespace
       - id: debug-statements
         name: Debug Statements
+  - repo: https://github.com/tsvikas/sync-with-uv
+    rev: v0.3.1
+    hooks:
+      - id: sync-with-uv
+        name: Sync with uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.8.14
     hooks:
