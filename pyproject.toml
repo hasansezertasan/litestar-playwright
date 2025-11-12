@@ -89,7 +89,7 @@ test = [
   "pytest-rerunfailures~=14.0",
   "pytest-snapshot>=0.9.0",
   "pytest-xdist[psutil]~=3.5",
-  "pytest~=8.1",
+  "pytest~=9.0",
   "uvicorn>0.27.0",
   "httpx>=0.27.0",
 ]
