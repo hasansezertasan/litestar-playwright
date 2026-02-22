@@ -23,6 +23,14 @@ Run the example using `uv`:
 uv run main.py
 ```
 
+Or run it with Docker:
+
+```sh
+docker build -f examples/multiple_plugins/Dockerfile -t litestar-playwright-multiple-plugins .
+docker run --rm -p 8000:8000 litestar-playwright-multiple-plugins
+```
+
+
 See the [Swagger UI](http://0.0.0.0:8000/schema/swagger) to see the available routes or navigate to the following routes:
 
 - `http://0.0.0.0:8000/` - Index route
