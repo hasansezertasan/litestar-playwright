@@ -49,12 +49,12 @@ repos:
       - id: debug-statements
         name: Debug Statements
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.10.10
+    rev: 0.10.12
     hooks:
       - id: uv-lock
         name: Update the uv lockfile
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.6
+    rev: v0.15.7
     hooks:
       - id: ruff
         name: Ruff Linter
