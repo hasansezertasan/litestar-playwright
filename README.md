@@ -137,6 +137,14 @@ Run the multiple plugins example:
 uv run python examples/multiple_plugins.py
 ```
 
+### `docker-examples`
+
+Build and run both examples with Docker Compose:
+
+```sh
+docker compose -f docker-compose.examples.yml up --build
+```
+
 ## License
 
 `litestar-playwright` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

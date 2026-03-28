@@ -1,0 +1,14 @@
+services:
+  simple-example:
+    build:
+      context: .
+      dockerfile: examples/simple/Dockerfile
+    ports:
+      - "8001:8000"
+
+  multiple-plugins-example:
+    build:
+      context: .
+      dockerfile: examples/multiple_plugins/Dockerfile
+    ports:
+      - "8002:8000"
