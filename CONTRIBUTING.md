@@ -131,6 +131,16 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/hasans
 1. Run the test suite
 1. Submit a pull request
 
+#### Dev Container (Recommended)
+
+This repository includes a preconfigured dev container in `.devcontainer/`.
+
+1. Install the VS Code **Dev Containers** extension.
+1. Open the repository in VS Code.
+1. Run **Dev Containers: Reopen in Container**.
+
+The container installs Python, `uv`, project dependencies, and Playwright browser binaries automatically.
+
 #### Development Commands
 
 - `uv sync` - Install dependencies
