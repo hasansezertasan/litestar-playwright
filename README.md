@@ -7,6 +7,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/litestar-playwright.svg)](https://pypi.org/project/litestar-playwright)
 [![License - MIT](https://img.shields.io/github/license/hasansezertasan/litestar-playwright.svg)](https://opensource.org/licenses/MIT)
 [![Latest Commit](https://img.shields.io/github/last-commit/hasansezertasan/litestar-playwright)](https://github.com/hasansezertasan/litestar-playwright)
+[![Coverage](https://img.shields.io/codecov/c/github/hasansezertasan/litestar-playwright)](https://codecov.io/gh/hasansezertasan/litestar-playwright)
 
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Linted and formatted with Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)

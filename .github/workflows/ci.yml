@@ -60,3 +60,48 @@ jobs:
         run: uv run playwright install-deps
       - name: Run the tests
         run: uv run --locked tox run
+      - name: Upload coverage files
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: coverage-${{ matrix.os }}
+          path: .coverage*
+          retention-days: 1
+          include-hidden-files: true
+  coverage:
+    name: Coverage Report
+    needs:
+      - ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: ".python-version"
+      - name: Setup uv
+        id: setup-uv
+        uses: astral-sh/setup-uv@v8.1.0
+        with:
+          enable-cache: true
+      - name: Restore cache
+        if: steps.setup-uv.outputs.cache-hit == 'true'
+        run: echo "Cache was restored"
+      - name: Download coverage files
+        uses: actions/download-artifact@v8
+        with:
+          pattern: coverage*
+          merge-multiple: true
+      - name: Install coverage
+        run: uv tool install coverage[toml]
+      - name: Coverage Report
+        run: |
+          uv tool run coverage combine
+          uv tool run coverage report
+          uv tool run coverage xml
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v6.0.0
+        with:
+          files: coverage.xml

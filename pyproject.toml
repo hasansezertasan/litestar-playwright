@@ -297,6 +297,9 @@ commands = [
     "install",
   ],
   [
+    "coverage",
+    "run",
+    "-m",
     "pytest",
     "-v",
     "--tb=short",
