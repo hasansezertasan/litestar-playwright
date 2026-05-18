@@ -130,7 +130,11 @@ asyncio_default_fixture_loop_scope = "function"
 source_pkgs = ["litestar_playwright", "tests"]
 branch = true
 parallel = true
-omit = ["src/litestar_playwright/__about__.py"]
+omit = [
+  "src/litestar_playwright/__about__.py",
+  "src/litestar_playwright/_version.py",
+  "*/litestar_playwright/_version.py",
+]
 
 
 [tool.coverage.paths]
