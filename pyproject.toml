@@ -251,6 +251,7 @@ error-on-warning = true
 [tool.pyrefly]
 python-version = "3.10"
 project-includes = ["src", "tests", "examples"]
+search-path = ["."]
 
 
 [tool.pylint.MASTER]
