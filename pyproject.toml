@@ -137,6 +137,8 @@ omit = ["src/litestar_playwright/__about__.py"]
 litestar_playwright = [
   "src/litestar_playwright",
   "*/litestar-playwright/src/litestar_playwright",
+  "*/site-packages/litestar_playwright",
+  "*\\site-packages\\litestar_playwright",
 ]
 tests = ["tests", "*/litestar-playwright/tests"]
 
