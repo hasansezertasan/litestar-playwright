@@ -14,7 +14,7 @@ from litestar.testing import AsyncTestClient  # pylint: disable=wrong-import-ord
 from litestar_playwright.plugin import PlaywrightPlugin
 
 if TYPE_CHECKING:
-    from typing import AsyncIterator
+    from collections.abc import AsyncIterator
 
 pytestmark = pytest.mark.anyio
 

@@ -1,7 +1,7 @@
 """Multiple Playwright Plugins Example. Read the README.md for more information."""
 # ruff: noqa: E501, S104, RUF029
 
-from typing import Any, Dict
+from typing import Any
 
 import uvicorn
 from litestar import Litestar, get
@@ -12,7 +12,7 @@ from litestar_playwright.plugin import PlaywrightPlugin
 
 
 @get("/")
-async def index() -> Dict[str, str]:
+async def index() -> dict[str, str]:
     """Show that the plugin is working with a simple index route.
 
     Returns:
@@ -22,7 +22,7 @@ async def index() -> Dict[str, str]:
 
 
 @get("/chrome-info")
-async def chrome_info(chrome_browser: Browser) -> Dict[str, Any]:
+async def chrome_info(chrome_browser: Browser) -> dict[str, Any]:
     """Get information about the Chrome browser instance.
 
     Args:
@@ -40,7 +40,7 @@ async def chrome_info(chrome_browser: Browser) -> Dict[str, Any]:
 
 
 @get("/firefox-info")
-async def firefox_info(firefox_browser: Browser) -> Dict[str, Any]:
+async def firefox_info(firefox_browser: Browser) -> dict[str, Any]:
     """Get information about the Firefox browser instance.
 
     Args:
@@ -58,7 +58,7 @@ async def firefox_info(firefox_browser: Browser) -> Dict[str, Any]:
 
 
 @get("/webkit-info")
-async def webkit_info(webkit_browser: Browser) -> Dict[str, Any]:
+async def webkit_info(webkit_browser: Browser) -> dict[str, Any]:
     """Get information about the WebKit browser instance.
 
     Args:
@@ -76,7 +76,7 @@ async def webkit_info(webkit_browser: Browser) -> Dict[str, Any]:
 
 
 @get("/headless-info")
-async def headless_info(headless_browser: Browser) -> Dict[str, Any]:
+async def headless_info(headless_browser: Browser) -> dict[str, Any]:
     """Get information about the headless Chrome browser instance.
 
     Args:
@@ -94,7 +94,7 @@ async def headless_info(headless_browser: Browser) -> Dict[str, Any]:
 
 
 @get("/screenshot")
-async def take_screenshot(chrome_browser: Browser) -> Dict[str, str]:
+async def take_screenshot(chrome_browser: Browser) -> dict[str, str]:
     """Take a screenshot using the Chrome browser instance.
 
     Args:
@@ -119,7 +119,7 @@ async def all_browsers_info(
     firefox_browser: Browser,
     webkit_browser: Browser,
     headless_browser: Browser,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """Get information about all browser instances.
 
     Args:

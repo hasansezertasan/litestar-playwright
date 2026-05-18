@@ -1,8 +1,6 @@
 """Simple Example. Read the README.md for more information."""
 # ruff: noqa: S104, RUF029
 
-from typing import Dict
-
 import uvicorn
 from litestar import Litestar, get
 from playwright.async_api import Browser
@@ -12,7 +10,7 @@ from litestar_playwright.plugin import PlaywrightPlugin
 
 
 @get("/")
-async def index() -> Dict[str, str]:
+async def index() -> dict[str, str]:
     """Show that the plugin is working with a simple index route.
 
     Returns:
@@ -22,7 +20,7 @@ async def index() -> Dict[str, str]:
 
 
 @get("/browser-info")
-async def browser_info(browser: Browser) -> Dict[str, str]:
+async def browser_info(browser: Browser) -> dict[str, str]:
     """Get information about the browser instance.
 
     Args:

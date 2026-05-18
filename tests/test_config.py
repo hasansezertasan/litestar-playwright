@@ -1,5 +1,5 @@
 """Tests for the litestar_playwright.config module."""
-# ruff: noqa: DOC501, RUF029, TRY301
+# ruff: noqa: RUF029, TRY301
 
 from unittest import mock
 
