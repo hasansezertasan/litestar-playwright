@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Any, Literal, cast
 from playwright.async_api import Browser, BrowserType, Playwright, async_playwright
 
 if TYPE_CHECKING:
-    from typing import AsyncGenerator
+    from collections.abc import AsyncGenerator
 
     from litestar import Litestar
     from litestar.datastructures import State
