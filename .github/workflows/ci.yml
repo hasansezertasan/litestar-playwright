@@ -61,7 +61,7 @@ jobs:
       - name: Run the tests
         run: uv run --locked tox run
       - name: Upload coverage files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-${{ matrix.os }}
           path: .coverage*
@@ -90,7 +90,7 @@ jobs:
         if: steps.setup-uv.outputs.cache-hit == 'true'
         run: echo "Cache was restored"
       - name: Download coverage files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: coverage*
           merge-multiple: true
