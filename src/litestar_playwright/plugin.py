@@ -30,7 +30,7 @@ class PlaywrightPlugin(InitPluginProtocol):
 
     @property
     def config(self) -> PlaywrightConfig:
-        """Get the configuration.
+        """The Playwright configuration.
 
         Returns:
             The configuration.
