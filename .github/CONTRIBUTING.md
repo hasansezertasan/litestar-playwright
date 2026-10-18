@@ -31,7 +31,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[litestar-playwright Code of Conduct](https://github.com/hasansezertasan/litestar-playwright/blob/main/CODE_OF_CONDUCT.md).
+[litestar-playwright Code of Conduct](https://github.com/hasansezertasan/litestar-playwright/blob/main/.github/CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to <hasansezertasan@gmail.com>.
 

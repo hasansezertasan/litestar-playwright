@@ -354,7 +354,7 @@ commands = [
   ["validate-pyproject", "pyproject.toml"],
   ["typos", "--diff"],
   # ["actionlint"],
-  # ["yamlfmt", "."],
+  # ["yamlfmt", "-conf", ".config/.yamlfmt.yml", "."],
 ]
 runner = "uv-venv-runner"
 dependency_groups = ["lint", "test"]

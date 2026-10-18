@@ -80,7 +80,7 @@ If you have any questions or need help, feel free to open an issue on the [GitHu
 
 ## Contributing :octocat:
 
-Any contributions are welcome! Please follow the [Contributing Guidelines](https://github.com/hasansezertasan/litestar-playwright/blob/main/CONTRIBUTING.md) to contribute to this project.
+Any contributions are welcome! Please follow the [Contributing Guidelines](https://github.com/hasansezertasan/litestar-playwright/blob/main/.github/CONTRIBUTING.md) to contribute to this project.
 
 > Tip: You can use the included `.devcontainer/` configuration to start with a fully provisioned development environment in VS Code.
 
