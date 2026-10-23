@@ -23,7 +23,7 @@ exclude: |
     |alembic
   )$
 default_language_version:
-  python: python3.9
+  python: python3.11
 default_stages: [pre-commit, pre-push]
 repos:
   # https://github.com/pre-commit/pre-commit-hooks#pre-commit-hooks
