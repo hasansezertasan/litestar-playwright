@@ -1,5 +1,5 @@
 """Simple Example. Read the README.md for more information."""
-# ruff: file-ignore[hardcoded-bind-all-interfaces, unused-async]
+# ruff: noqa: S104, RUF029
 
 import uvicorn
 from litestar import Litestar, get
