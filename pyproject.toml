@@ -191,7 +191,7 @@ preview = true
 
 
 [tool.ruff.lint]
-ignore = ["COM812", "CPY001", "DOC"]
+ignore = ["missing-trailing-comma", "missing-copyright-notice", "DOC"]
 fixable = ["ALL"]
 logger-objects = ["logging_setup.logger"]
 preview = true
@@ -199,7 +199,7 @@ select = ["ALL"]
 
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*.py" = ['S101']
+"tests/*.py" = ['assert']
 
 
 [tool.ruff.lint.pyupgrade]

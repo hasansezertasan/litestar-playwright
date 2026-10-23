@@ -1,5 +1,5 @@
 """Multiple Playwright Plugins Example. Read the README.md for more information."""
-# ruff: noqa: E501, S104, RUF029
+# ruff: file-ignore[line-too-long, hardcoded-bind-all-interfaces, unused-async]
 
 from typing import Any
 
@@ -108,7 +108,7 @@ async def take_screenshot(chrome_browser: Browser) -> dict[str, str]:
         await page.goto("https://example.com")
         await page.screenshot(path="screenshot.png")
         await page.close()
-    except Exception as e:  # noqa: BLE001, pylint: disable=broad-exception-caught
+    except Exception as e:  # ruff: ignore[blind-except], pylint: disable=broad-exception-caught
         return {"status": "error", "message": str(e)}
     return {"status": "success", "message": "Screenshot saved as screenshot.png"}
 

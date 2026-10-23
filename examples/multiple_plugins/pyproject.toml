@@ -3,7 +3,7 @@ name = "litestar-playwright-multiple-plugins-example"
 description = "Multiple Playwright Plugins Example. Read the README.md for more information."
 version = "0.1.0"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 dependencies = ["litestar", "uvicorn", "litestar-playwright"]
 
 
